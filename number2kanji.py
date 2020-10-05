@@ -1,5 +1,3 @@
-import numpy as np
-
 kansuji = {
     0:"零",
     1:"壱",
@@ -21,9 +19,6 @@ kansuji = {
 kugiri = ["","拾","百","千"]
 keta = ["","万","億","兆"]
 
-
-
-
 def number2kanji(num):
     NumList = []
     kanji = ""
@@ -37,22 +32,31 @@ def number2kanji(num):
     # リストを逆順にする
     NumList = NumList[::-1]
     # print(NumList)
-    
-    # 4桁ずつ処理していく
-    for index,fourDigit in enumerate(NumList):
-        tmp = ""
-        # 区切りを追加
-        for i in range(len(fourDigit)):
-            tmp += kansuji[int(fourDigit[i])]
-            tmp += kugiri[len(fourDigit)-i-1]
 
-        # 桁を追加
-        digit = len(NumList)-index-1
-        tmp += keta[digit] 
-        kanji += tmp
+    # 零の処理
+    if len(NumList) == 1 and NumList[0] == "0":
+        kanji = "零"
+
+    else:
+        # 4桁ずつ処理していく
+        for index,fourDigit in enumerate(NumList):
+            tmp = ""
+            # 区切りを追加
+            for i in range(len(fourDigit)):
+                # if i != len(fourDigit)-1 and fourDigit[i] == "0" :
+                if fourDigit[i] == "0":
+                    continue
+                else:
+                    tmp += kansuji[int(fourDigit[i])]
+                    tmp += kugiri[len(fourDigit)-i-1]
+
+            # 桁を追加
+            if fourDigit != "":
+                digit = len(NumList)-index-1
+                tmp += keta[digit] 
+                kanji += tmp
 
     return kanji
-
 
 # 入力str
 num = input()
