@@ -5,14 +5,6 @@ from kanji2number import kanji2number as k2n
 app = Flask(__name__)
 app.config["JSON_AS_ASCII"] = False
 
-# どこからでもアクセスできるようになる
-@app.after_request
-def after_request(response):
-  response.headers.add('Access-Control-Allow-Origin', '*')
-  response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
-  response.headers.add('Access-Control-Allow-Methods', 'GET')
-  return response
-
 @app.route("/", methods=["GET"])
 def main_page():
     # render_templateで ./templates/ 内のhtmlファイル読み込める
