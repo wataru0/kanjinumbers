@@ -1,4 +1,4 @@
 import sys
 sys.path.insert(0, '/var/www/kanjinumbers')
 
-from app import app as application
+from kanjinumbersBack import app as application
