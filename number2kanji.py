@@ -25,13 +25,24 @@ def number2kanji(num):
     # 下位からから4桁ずつ区切る
     for _ in range(len(num)//4+1):
         tmp = num[-4:]
+        # print("tmp:",tmp)
+
         NumList.append(tmp)
+
         # 末尾の文字列を削除
-        num = num.rstrip(tmp)
+
+        # 以下の場合同じ数字が連続していると全部消える
+        # num = num.rstrip(tmp)
+        num = num[:-4]
+        
+        # num = num[-4:].rstrip(tmp)
+        # num = num[-4:].replace(tmp,"")
+
+        # print("num:",num)
 
     # リストを逆順にする
     NumList = NumList[::-1]
-    # print(NumList)
+    print(NumList)
 
     # 零の処理
     if len(NumList) == 1 and NumList[0] == "0":
