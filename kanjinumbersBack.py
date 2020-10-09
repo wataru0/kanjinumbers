@@ -13,15 +13,17 @@ def main_page():
 
 @app.route("/v1/number2kanji/<number>", methods=["GET"])
 def number2kanji(number):
-    return jsonify({
-        "number": str(number),
-        "kanji": str(n2k(number))})
+    try:
+        return str(n2k(number))
+    except:
+        return make_response("", 204)
 
 @app.route("/v1/kanji2number/<kanji>", methods=["GET"])
 def kanji2number(kanji):
-    return jsonify({
-        "number": str(k2n(kanji)),
-        "kanji": str(kanji)})
+    try:
+        return str(k2n(kanji))
+    except:
+        return make_response("", 204)
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=80, threaded=True)
