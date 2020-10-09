@@ -32,6 +32,7 @@ def kanji2number(kansuji):
     number += tmp
     return number
 
-kansuji = input()
-
-print(kanji2number(kansuji))
+# # 入力 
+# kansuji = input()
+# # 出力
+# print(kanji2number(kansuji))

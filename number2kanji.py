@@ -62,8 +62,8 @@ def number2kanji(num):
 
     return kanji
 
-# 入力str
-num = input()
+# # 入力str
+# num = input()
 
-# 出力
-print(number2kanji(num))
+# # 出力
+# print(number2kanji(num))
