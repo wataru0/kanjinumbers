@@ -7,6 +7,7 @@ app.config["JSON_AS_ASCII"] = False
 
 @app.route("/", methods=["GET", "POST"])
 def main_page():
+    # render_templateで ./templates/ 内のhtmlファイル読み込める
     return render_template("mainpage.html")
 
 @app.route("/v1/number2kanji/<number>", methods=["GET", "POST"])
