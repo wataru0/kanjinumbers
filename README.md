@@ -59,4 +59,9 @@ Amazon EC2を利用し，その中でApacheを用いてWebサーバーを構築�
 ## 使い方
 1. UI
 <img width="684" alt="スクリーンショット 2020-10-10 12 27 30" src="https://user-images.githubusercontent.com/44032125/95646897-e9325a80-0b07-11eb-8793-44052ac6ead3.png">
-1. API
+
+2. API
+- アラビア数字（1234）を漢数字に変換
+    - http://ec2-3-112-175-24.ap-northeast-1.compute.amazonaws.com/v1/number2kanji/1234
+- 漢数字（壱千弐百参拾四）をアラビア数字に変換
+    - http://ec2-3-112-175-24.ap-northeast-1.compute.amazonaws.com/v1/kanji2number/壱千弐百参拾四
