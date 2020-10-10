@@ -11,20 +11,28 @@ suji = {
     "九":9
 }
 
-keta = {
+kugiri = {
     "拾":10,
     "百":100,
-    "千":1000,
+    "千":1000
+}
+
+keta = {
     "万":10000,
     "億":100000000,
     "兆":1000000000000
 }
+
 def kanji2number(kansuji):
     number = 0
     tmp = 0
     for kanji in kansuji:
-        if kanji in keta:
-            number += tmp*keta[kanji]
+        if kanji in kugiri:
+            number += tmp*kugiri[kanji]
+            tmp = 0
+        elif kanji in keta:
+            number += tmp
+            number *= keta[kanji]
             tmp = 0
         else:
             tmp += suji[kanji]
