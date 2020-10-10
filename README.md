@@ -58,7 +58,8 @@ Amazon EC2を利用し，その中でApacheを用いてWebサーバーを構築�
 
 ## 使い方
 1. UI
-<img width="684" alt="スクリーンショット 2020-10-10 12 27 30" src="https://user-images.githubusercontent.com/44032125/95646897-e9325a80-0b07-11eb-8793-44052ac6ead3.png">
+
+<img width="500" src="https://user-images.githubusercontent.com/44032125/95647325-804be200-0b09-11eb-96b3-cf7c4e2172f8.png" />
 
 2. API
 - アラビア数字（1234）を漢数字に変換
